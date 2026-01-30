@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام التحقق - جامعة البصرة</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: #eef2f3; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; width: 90%; max-width: 420px; padding: 30px; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border-top: 10px solid #004a7c; text-align: center; }
+        .header img { width: 75px; margin-bottom: 15px; }
+        .header h2 { color: #004a7c; font-size: 1.3rem; margin-bottom: 25px; }
+        .captcha-box { background: #fff9f9; border: 2px solid #d32f2f; padding: 20px; border-radius: 15px; margin-bottom: 25px; }
+        .love-iraq { font-size: 1.5rem; font-weight: bold; color: #d32f2f; display: block; margin-bottom: 15px; }
+        .btn { background: #004a7c; color: white; border: none; padding: 15px; width: 100%; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn:disabled { background: #ccc; cursor: not-allowed; }
+        #data-section { display: none; text-align: right; margin-top: 20px; animation: fadeIn 0.5s; }
+        .success-msg { color: #2e7d32; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; display: block; text-align: center; }
+        ol { padding-right: 20px; line-height: 1.8; color: #333; }
+        li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Coat_of_arms_of_Iraq_%282008%E2%80%93present%29.svg/1200px-Coat_of_arms_of_Iraq_%282008%E2%80%93present%29.svg.png">
+        <h2>منصة التحقق من صحة الصدور</h2>
+    </div>
+
+    <div id="verify-area">
+        <div class="captcha-box">
+            <span class="love-iraq">أنا أحب العراق</span>
+            <label style="font-size: 1.1rem; cursor: pointer;">
+                <input type="checkbox" id="check" style="transform: scale(1.5); margin-left: 10px;" onchange="document.getElementById('btn').disabled = !this.checked">
+                تأكيد هويتي
+            </label>
+        </div>
+        <button id="btn" class="btn" disabled onclick="showInfo()">تحميل البيانات المرقمة</button>
+    </div>
+
+    <div id="data-section">
+        <span class="success-msg">✅ تم استرجاع البيانات المعتمدة:</span>
+        <ol>
+            <li><strong>الاسم:</strong> شهد طه سعيد جايد</li>
+            <li><strong>الجامعة:</strong> جامعة البصرة</li>
+            <li><strong>الكلية:</strong> التربية للعلوم الصرفة</li>
+            <li><strong>الدرجة:</strong> بكالوريوس علوم حياة</li>
+            <li><strong>رقم الأمر:</strong> 17569</li>
+            <li><strong>التاريخ:</strong> 2017/09/07</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    function showInfo() {
+        document.getElementById('verify-area').style.display = 'none';
+        document.getElementById('data-section').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
