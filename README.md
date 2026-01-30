@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة التحقق - جامعة البصرة</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 450px; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid #004a7c; text-align: center; }
+        .header img { width: 80px; margin-bottom: 10px; }
+        .captcha-box { background: #fafafa; border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .btn { background: #006699; color: white; border: none; padding: 15px; width: 100%; border-radius: 8px; font-size: 18px; cursor: pointer; }
+        .btn:disabled { background: #ccc; }
+        #info { display: none; margin-top: 20px; text-align: right; background: #f1f8ff; padding: 15px; border-radius: 10px; border: 1px solid #cce5ff; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Coat_of_arms_of_Iraq_%282008%E2%80%93present%29.svg/1200px-Coat_of_arms_of_Iraq_%282008%E2%80%93present%29.svg.png">
+            <h3>منصة التحقق من الوثائق الرسمية</h3>
+        </div>
+        <div id="verify-section">
+            <div class="captcha-box">
+                <p style="font-size: 1.2rem; font-weight: bold;">أنا أحب العراق</p>
+                <input type="checkbox" id="cbox" style="transform: scale(2);" onchange="document.getElementById('sbtn').disabled = !this.checked">
+            </div>
+            <button id="sbtn" class="btn" disabled onclick="showData()">💾 تأكيد الهوية</button>
+        </div>
+        <div id="info">
+            <h3 style="color: #004a7c; text-align: center;">✅ بيانات الوثيقة المعتمدة</h3>
+            <hr>
+            <p><strong>الاسم الكامل:</strong> شهد طه سعيد جايد</p>
+            <p><strong>الجامعة:</strong> جامعة البصرة</p>
+            <p><strong>الكلية:</strong> التربية للعلوم الصرفة</p>
+            <p><strong>الدرجة العلمية:</strong> بكالوريوس تربية/علوم الحياة</p>
+            <p><strong>رقم الأمر الجامعي:</strong> 17569</p>
+            <p><strong>تاريخ التخرج:</strong> 2017/9/7</p>
+        </div>
+    </div>
+    <script>
+        function showData() {
+            document.getElementById('verify-section').style.display = 'none';
+            document.getElementById('info').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
